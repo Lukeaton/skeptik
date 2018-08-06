@@ -1,5 +1,13 @@
 {
   "name": "skeptik",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "blendid": "^4.4.3"
+  },
+  "version": "1.0",
+  "description": "A mixed article site in the vein of Medium",
+  "main": "index.js",
+  "repository": "https://github.com/Lukeaton/skeptik.git",
+  "author": "Luke Eaton",
+  "license": "MIT"
 }
