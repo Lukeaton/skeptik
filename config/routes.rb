@@ -1,6 +1,9 @@
 # == Route Map
 #
 #                    Prefix Verb URI Pattern                                                                              Controller#Action
+#                pages_home GET  /pages/home(.:format)                                                                    pages#home
+#                pages_show GET  /pages/show(.:format)                                                                    pages#show
+#               session_new GET  /session/new(.:format)                                                                   session#new
 #          collections_edit GET  /collections/edit(.:format)                                                              collections#edit
 #         collections_entry GET  /collections/entry(.:format)                                                             collections#entry
 #         collections_index GET  /collections/index(.:format)                                                             collections#index
@@ -23,6 +26,9 @@
 #      rails_direct_uploads POST /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
 
 Rails.application.routes.draw do
+  get 'pages/home'
+  get 'pages/show'
+  get 'session/new'
   get 'collections/edit'
   get 'collections/entry'
   get 'collections/index'
