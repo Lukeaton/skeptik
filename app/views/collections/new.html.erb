@@ -1,2 +1,8 @@
-<h1>Collections#new</h1>
-<p>Find me in app/views/collections/new.html.erb</p>
+<h1>Collections#index</h1>
+
+
+<ul>
+<% @collections.each do |collection| %>
+  <li><%= link_to collection.title, collection %></li>
+<% end %>
+</ul>
