@@ -2,7 +2,17 @@
 #
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
 #                      root GET    /                                                                                        pages#home
+#              articles_add GET    /articles/add(.:format)                                                                  articles#add
+#                admin_page GET    /users/edit(.:format)                                                                    users#edit
 #                           DELETE /users/:id(.:format)                                                                     users#destroy
+#                     pages GET    /pages(.:format)                                                                         pages#index
+#                           POST   /pages(.:format)                                                                         pages#create
+#                  new_page GET    /pages/new(.:format)                                                                     pages#new
+#                 edit_page GET    /pages/:id/edit(.:format)                                                                pages#edit
+#                      page GET    /pages/:id(.:format)                                                                     pages#show
+#                           PATCH  /pages/:id(.:format)                                                                     pages#update
+#                           PUT    /pages/:id(.:format)                                                                     pages#update
+#                           DELETE /pages/:id(.:format)                                                                     pages#destroy
 #                  articles GET    /articles(.:format)                                                                      articles#index
 #                           POST   /articles(.:format)                                                                      articles#create
 #               new_article GET    /articles/new(.:format)                                                                  articles#new
@@ -27,6 +37,14 @@
 #                           PATCH  /users/:id(.:format)                                                                     users#update
 #                           PUT    /users/:id(.:format)                                                                     users#update
 #                           DELETE /users/:id(.:format)                                                                     users#destroy
+#             session_index GET    /session(.:format)                                                                       session#index
+#                           POST   /session(.:format)                                                                       session#create
+#               new_session GET    /session/new(.:format)                                                                   session#new
+#              edit_session GET    /session/:id/edit(.:format)                                                              session#edit
+#                   session GET    /session/:id(.:format)                                                                   session#show
+#                           PATCH  /session/:id(.:format)                                                                   session#update
+#                           PUT    /session/:id(.:format)                                                                   session#update
+#                           DELETE /session/:id(.:format)                                                                   session#destroy
 #                 users_new GET    /users/new(.:format)                                                                     users#new
 #                     login GET    /login(.:format)                                                                         session#new
 #                           POST   /login(.:format)                                                                         session#create
@@ -38,26 +56,11 @@
 #      rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
 
 Rails.application.routes.draw do
-  root :to => 'articles#index'
-  # get 'pages/home'
-  # get 'pages/show'
-  # get 'session/new'
-  # get 'collections/edit'
-  # get 'collections/entry'
-  # get 'collections/index'
-  # get 'collections/new'
-  # get 'collections/show'
-  # get 'articles/edit'
-  # get 'articles/entry'
-  # get 'articles/index'
-  # get 'articles/new'
-  # get 'articles/show'
-  # get 'users/edit'
-  # get 'users/entry'
-  # get 'users/index'
-  # get 'users/new'
-  # get 'users/show'
-  get '/users/edit' => 'users#edit', :as => :admin_page
+  root :to => 'pages#home'
+  
+  get "articles/:id/like" => "articles#like", as: :like_article
+  get "articles/:id/unlike" => "articles#unlike", as: :unlike_article
+  get 'articles/add' => 'articles#add'
   delete '/users/:id(.:format)' => 'users#destroy'
   resources :pages
   resources :articles

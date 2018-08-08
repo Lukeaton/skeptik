@@ -1,5 +1,11 @@
-<h1>Collections</h1>
+<h1><%= @collection.title %></h1>
+
+<% @collection.articles.each do |article| %>
 
 
-<h2><%= @collection.title %>
-<%= link_to "Edit details", edit_collection_path(@collection) %></h2>
+    <p><%= link_to image_tag(article.image, :class => 'thumb'), article %></p>
+    <%= article.title %>
+
+
+
+<% end %>

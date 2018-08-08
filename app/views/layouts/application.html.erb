@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>KNHO</title>
+    <title>lumière</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600" rel="stylesheet">
@@ -14,13 +14,14 @@
 
   <body>
     <nav class="stroke">
+
+      <% if @current_user.present? %>
       <%= link_to 'Home', '/pages/home' %>
       <%= link_to 'New Articles', '/articles/new' %>
-      <%= link_to 'All Articles', '/articles/index' %>
-      <%= link_to 'Add Article', new_article_path %>      
-      <% if @current_user.present? %>
-
-        <%= link_to "Sign out", login_path, :method => 'delete' %>
+      <%= link_to 'All Articles', articles_path %>
+      <%= link_to 'Add Article', articles_add_path %>
+      <%= link_to 'My Collection', collections_path %>
+      <%= link_to "Sign out", login_path, :method => 'delete' %>
       <% else %>
         <%= link_to 'Sign up', new_user_path %>
         <%= link_to 'Sign in', login_path %>
