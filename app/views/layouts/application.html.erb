@@ -10,6 +10,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <% # Required for google_sign_in to add the Google JS assets and meta tags! %>
+    <%= yield :head %>
   </head>
 
   <body>

@@ -57,7 +57,7 @@
 
 Rails.application.routes.draw do
   root :to => 'pages#home'
-  
+
   get "articles/:id/like" => "articles#like", as: :like_article
   get "articles/:id/unlike" => "articles#unlike", as: :unlike_article
   get 'articles/add' => 'articles#add'
