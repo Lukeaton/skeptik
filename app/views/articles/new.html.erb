@@ -4,6 +4,6 @@
 <ul>
   <% Article.all.each do |article| %>
     <li><%= link_to article.title, article %></li>
-    <li><%= link_to image_tag(article.image, :class => 'thumb'), article %></li>
+    <li><%= link_to image_tag(article.image), article %></li>
   <% end %>
 </ul>

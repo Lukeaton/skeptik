@@ -1,26 +1,33 @@
-<h1>Articles</h1>
-
-<%# @article = Article.find params[:id] do |article| %>
 
 
 
-  <%= link_to image_tag(@article.image, :class => 'thumb'), @article %>
-  <h2><%= @article.title %></h2>
-  <p><%= @article.story %></p>
-    <% if @current_user.id == @article.user_id %>
-      <%= link_to 'Edit', edit_article_path(@article) %>
-      <%= link_to 'Delete', article_path(@article),
-          method: :delete,
-          data: { confirm: 'Are you sure?' } %></td>
+  <div class="article-main">
+    <%= link_to image_tag(@article.image), @article %>
+    <h2><%= @article.title %></h2>
+    <p><%= simple_format @article.story %></p>
+      <% if @current_user.id == @article.user_id %>
+        <%= link_to 'Edit', edit_article_path(@article) %>
+        <%= link_to 'Delete', article_path(@article),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></td>
 
+        <% end %>
+  </div>
+
+
+  <div class="like-clicker">
+    <div id="dislike">
+      <% if @collections.present?%>
+          <% if @current_user.collections.first.articles.include? @article %>
+            <%= link_to "Unlike",  unlike_article_path(@article)%>
+        <% end %>
+    </div>
+    
+    <div id="like">
+      <% else %>
+      <%= link_to "Like", like_article_path(@article) %>
       <% end %>
-<%# end %>
+    </div>
 
-<% if @collections.present?%>
-    <% if @current_user.collections.first.articles.include? @article %>
-      <%= link_to "Unlike",  unlike_article_path(@article)%>
-  <% end %>
 
-<% else %>
-<%= link_to "Like", like_article_path(@article) %>
-<% end %>
+  </div>

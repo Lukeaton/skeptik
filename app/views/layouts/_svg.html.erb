@@ -1,27 +1,5 @@
-<div class="signupwrapper">
-
-  <div class="form-group_sign-in"><h1>Sign Up</h1></div>
-
-  <% if @user.errors.any? %>
-    <ol>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ol>
-  <% end %>
-
-  <%= form_for @user do |f| %>
-  <div class="signup"><%= f.label :email %><%= f.email_field :email %></div>
-  <div class="signup"><%= f.label :password %><%= f.password_field :password %></div>
-  <div class="signup"><%= f.label :password_confirmation %><%= f.password_field :password_confirmation %></div>
-  <div class="signup"><%= f.submit "Sign up!" %></div>
-
-  <% end %>
-
-</div>
-
-<img id="lumiere" src="">
-<svg
+<img src="">
+<svg id="lumiere-all"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -33,7 +11,7 @@
    id="Layer_1"
    x="0px"
    y="0px"
-   viewBox="0 0 826.90137 163.03711"
+   viewBox="0 0 950.90137 163.03711"
    xml:space="preserve"
    sodipodi:docname="Lumière.svg"
    width="826.90137"

@@ -2,8 +2,9 @@
 #
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
 #                      root GET    /                                                                                        pages#home
+#              like_article GET    /articles/:id/like(.:format)                                                             articles#like
+#            unlike_article GET    /articles/:id/unlike(.:format)                                                           articles#unlike
 #              articles_add GET    /articles/add(.:format)                                                                  articles#add
-#                admin_page GET    /users/edit(.:format)                                                                    users#edit
 #                           DELETE /users/:id(.:format)                                                                     users#destroy
 #                     pages GET    /pages(.:format)                                                                         pages#index
 #                           POST   /pages(.:format)                                                                         pages#create
@@ -62,6 +63,7 @@ Rails.application.routes.draw do
   get "articles/:id/unlike" => "articles#unlike", as: :unlike_article
   get 'articles/add' => 'articles#add'
   delete '/users/:id(.:format)' => 'users#destroy'
+  get 'collections' => "collections#show"
   resources :pages
   resources :articles
   resources :collections

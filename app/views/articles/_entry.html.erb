@@ -1,14 +1,17 @@
 <%= form_for @article do |f| %>
-<div class="form-group">
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :story %>
-  <%= f.text_field :story %>
-  <%= f.label :image %>
-  <%= f.text_field :image %>
-
-
-
+<div class="form-group_article">
+  <div id="field-title">
+    <%= f.label :title %>
+    <%= f.text_field :title, autofocus: true %>
+  </div>
+  <div id="field-story">
+    <%= f.label :story %>
+    <%= f.text_area :story %>
+  </div>
+  <div id="field-image">
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </div>
   <%= f.submit %>
 <% end %>
 </div>

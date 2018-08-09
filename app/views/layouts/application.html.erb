@@ -35,6 +35,12 @@
 
   <body>
 
+          <!-- <%= render :partial => "layouts/svg" unless @current_user.present?  %> -->
+          <% if @current_user.present?  %>
+          <%= render :partial => "layouts/svg" %>
+          <% end  %>
+
+
     <%= yield %>
   </body>
 </html>

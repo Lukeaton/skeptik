@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
         @current_user.collections.first.articles << article
       end
     else
-      collection = Collection.create user_id: @current_user.id, article_id: article.id, title: "default "
+      collection = Collection.create user_id: @current_user.id, article_id: article.id, title: "My Collection "
       collection.articles << article
       @current_user.collections << collection
     end

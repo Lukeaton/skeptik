@@ -4,7 +4,8 @@ class CollectionsController < ApplicationController
   end
 
   def show
-    @collection = Collection.find params[:id]
+    # @collection = Collection.find params[:id]
+    @collection = @current_user.collections.first
   end
 
   def edit
