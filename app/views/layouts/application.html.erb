@@ -11,26 +11,30 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
     <% # Required for google_sign_in to add the Google JS assets and meta tags! %>
     <%= yield :head %>
   </head>
 
+  <header class="nav-down">
+    <% if @current_user.present? %>
+    <%= link_to 'Home', '/articles/new' %>
+    <!-- <%= link_to 'New Articles', '/articles/new' %> -->
+    <%= link_to 'All Articles', articles_path %>
+    <%= link_to 'Add Article', articles_add_path %>
+    <%= link_to 'My Collection', collections_path %>
+    <%= link_to "Sign out", login_path, :method => 'delete' %>
+    <% else %>
+      <%= link_to 'Sign up', new_user_path %>
+      <%= link_to 'Sign in', login_path %>
+    <% end %>
+</header>
+
+
+
   <body>
-    <nav class="stroke">
 
-      <% if @current_user.present? %>
-      <%= link_to 'Home', '/pages/home' %>
-      <%= link_to 'New Articles', '/articles/new' %>
-      <%= link_to 'All Articles', articles_path %>
-      <%= link_to 'Add Article', articles_add_path %>
-      <%= link_to 'My Collection', collections_path %>
-      <%= link_to "Sign out", login_path, :method => 'delete' %>
-      <% else %>
-        <%= link_to 'Sign up', new_user_path %>
-        <%= link_to 'Sign in', login_path %>
-      <% end %>
-
-    </nav>
     <%= yield %>
   </body>
 </html>

@@ -1,4 +1,5 @@
 <%= form_for @article do |f| %>
+<div class="form-group">
   <%= f.label :title %>
   <%= f.text_field :title %>
   <%= f.label :story %>
@@ -10,3 +11,4 @@
 
   <%= f.submit %>
 <% end %>
+</div>
