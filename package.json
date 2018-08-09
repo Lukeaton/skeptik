@@ -1,9 +1,7 @@
 {
   "name": "skeptik",
   "private": true,
-  "dependencies": {
-    "blendid": "^4.4.3"
-  },
+  "dependencies": {},
   "version": "1.0",
   "description": "A mixed article site in the vein of Medium",
   "main": "index.js",
