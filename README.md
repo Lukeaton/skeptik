@@ -1,12 +1,16 @@
 # Lumière
-Provides enlightening articles.
 
 Lumière is an alternative to sites like Medium and the majoity of legacy news outlets.
-A place that contributers can publish thoughtful, enlightening articles nased on fact,
+A place that contributers can publish thoughtful, enlightening articles based on fact,
 reason and science. Not emotions and feelings.
 
 Without the pressure of a deadlines, overbearing editors and shareholders influening
-the content.
+the content. Contibutors can publish without the fear of job loss due to social media 
+outrage.
+Hopefully the reader benefits from this with fully fleshed out articles that can shine
+a light in this too often dark world.
+
+Enjoy.
 
 ![](header.png)
 
