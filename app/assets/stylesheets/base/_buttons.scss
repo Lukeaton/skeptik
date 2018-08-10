@@ -1,18 +1,38 @@
-header a {
-  text-decoration: none;
-  color: inherit;
-  font-family: 'Oswald', sans-serif;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-a:hover {
-  color: grey;
-}
-
 .like-clicker {
   text-align: center;
+  margin-bottom: 25px;
+
+}
+
+.like-clicker a {
+  text-decoration: none;
+  color: inherit;
+  font-family: 'Libre Baskerville',Georgia,serif;
+  // border: 1px solid #000;
+  // padding: 2px 2px 2px 2px;
+  // border-radius: 5px;
+  border-bottom: 1px solid #AEABA4;
+  padding: 2px;
+}
+
+.input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+  margin-bottom: 20px;
+  align-items: flex-start;
+  text-align: center;
+  cursor: pointer;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 2px 6px 3px;
+  border-width: 1px;
+  border-color: #AEABA4;
+  border-style: solid;
+  font-family: 'Libre Baskerville',Georgia,serif;
+}
+
+.article-main #edit-delete a {
+  color: inherit;
+  font-family: 'Libre Baskerville',Georgia,serif;
+  text-decoration: none;
+  border-bottom: 1px solid #AEABA4;
+  padding: 2px;
 }

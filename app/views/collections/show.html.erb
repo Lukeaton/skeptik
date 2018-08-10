@@ -1,11 +1,9 @@
-<h1><%= @collection.title %></h1>
-
-<% @collection.articles.each do |article| %>
-
-
-    <p><%= link_to image_tag(article.image, :class => 'thumb'), article %></p>
-    <%= article.title %>
-
-
-
-<% end %>
+<div class="link_typography">
+    <% @collection.articles.each do |article| %>
+      <div id="thumbs"><%= link_to image_tag(article.image), article %>
+        <div id="title-partner">
+          <h1><%= link_to article.title, article %></h1>
+        </div>
+      </div>
+    <% end %>
+</div>

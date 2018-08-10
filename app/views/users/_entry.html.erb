@@ -1,6 +1,7 @@
-<%= form_for @user do |f| %>
+<div class="form_typography">
+  <%= form_for @user do |f| %>
   <%= f.label 'admin', 'Admin' %>
   <%= f.select :admin, [['True', true], ['False', false]] %>
-  
   <%= f.submit %>
 <% end %>
+</div>

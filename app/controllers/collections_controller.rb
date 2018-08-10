@@ -5,7 +5,12 @@ class CollectionsController < ApplicationController
 
   def show
     # @collection = Collection.find params[:id]
-    @collection = @current_user.collections.first
+    if @current_user.collections.present?
+      @collection = @current_user.collections.first
+    else
+      @collection = Collection.create title: "My Collection"
+      @collection.user_id = @current_user.id
+    end
   end
 
   def edit
@@ -32,6 +37,6 @@ class CollectionsController < ApplicationController
 
     private
     def collection_params
-      params.require(:collection).permit(:name)
+      params.require(:collection).permit(:title)
     end
 end

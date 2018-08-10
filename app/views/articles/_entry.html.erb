@@ -1,17 +1,21 @@
-<%= form_for @article do |f| %>
-<div class="form-group_article">
-  <div id="field-title">
-    <%= f.label :title %>
-    <%= f.text_field :title, autofocus: true %>
+<div class="form_typography">
+  <%= form_for @article do |f| %>
+  <div class="form-group_article">
+    <div id="field-title">
+      <%= f.label :title %>
+      <%= f.text_field :title, autofocus: true %>
+    </div>
+    <div id="field-story">
+      <%= f.label :story %>
+      <%= f.text_area :story %>
+    </div>
+    <div id="field-image">
+      <%= f.label :image %>
+      <%= f.text_field :image %>
+    </div>
+    <div class="submit-btn">
+      <%= f.submit %>
+    </div>
+  <% end %>
   </div>
-  <div id="field-story">
-    <%= f.label :story %>
-    <%= f.text_area :story %>
-  </div>
-  <div id="field-image">
-    <%= f.label :image %>
-    <%= f.text_field :image %>
-  </div>
-  <%= f.submit %>
-<% end %>
 </div>

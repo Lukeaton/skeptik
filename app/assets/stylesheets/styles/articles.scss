@@ -1,3 +1,27 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "base/_typography.scss";
+
+.article-main {
+  margin-left: 15%;
+  width: 70%;
+  border-top: 1px solid #AEABA4;
+  padding-top: 20px;
+
+}
+
+.link_typography {
+  margin-left: 15%;
+  width: 70%;
+  padding-top: 20px;
+}
+
+#thumbs {
+  display: flex;
+  align-content: stretch;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  border-top: 1px solid #AEABA4;
+  padding-left: 25px;
+}

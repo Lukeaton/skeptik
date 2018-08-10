@@ -6,6 +6,7 @@
 #            unlike_article GET    /articles/:id/unlike(.:format)                                                           articles#unlike
 #              articles_add GET    /articles/add(.:format)                                                                  articles#add
 #                           DELETE /users/:id(.:format)                                                                     users#destroy
+#               collections GET    /collections(.:format)                                                                   collections#show
 #                     pages GET    /pages(.:format)                                                                         pages#index
 #                           POST   /pages(.:format)                                                                         pages#create
 #                  new_page GET    /pages/new(.:format)                                                                     pages#new
@@ -22,7 +23,7 @@
 #                           PATCH  /articles/:id(.:format)                                                                  articles#update
 #                           PUT    /articles/:id(.:format)                                                                  articles#update
 #                           DELETE /articles/:id(.:format)                                                                  articles#destroy
-#               collections GET    /collections(.:format)                                                                   collections#index
+#                           GET    /collections(.:format)                                                                   collections#index
 #                           POST   /collections(.:format)                                                                   collections#create
 #            new_collection GET    /collections/new(.:format)                                                               collections#new
 #           edit_collection GET    /collections/:id/edit(.:format)                                                          collections#edit

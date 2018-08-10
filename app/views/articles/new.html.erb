@@ -1,9 +1,10 @@
-<h1>Articles#new</h1>
-
-
-<ul>
-  <% Article.all.each do |article| %>
-    <li><%= link_to article.title, article %></li>
-    <li><%= link_to image_tag(article.image), article %></li>
-  <% end %>
-</ul>
+<div class="link_typography">
+    <% Article.all.each do |article| %>
+      <div id="thumbs"><%= link_to image_tag(article.image), article %>
+        <div id="title-partner">
+          <h1><%= link_to article.title, article %></h1>
+          <%== simple_format(article.story).split('</p>').second %>
+        </div>
+      </div>
+    <% end %>
+</div>

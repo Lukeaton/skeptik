@@ -1,4 +1,10 @@
-
+.form-group_article {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #AEABA4;
+  max-width: 70%;
+  margin-left: 15%;
+}
 
 .form-group_article #field-story textarea {
   width:500px;
@@ -27,4 +33,30 @@
 
 #field-image {
   margin-bottom: 10px;
+}
+
+
+.loginwrapper {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #AEABA4;
+  max-width: 50%;
+  margin-left: 25%;
+  font-family: 'Libre Baskerville',Georgia,serif;
+}
+
+.loginwrapper h1 {
+  margin-bottom: 20px;
+}
+
+.loginwrapper input {
+  margin-bottom: 20px;
+}
+
+.loginfield01 {
+  margin-left: -20px;
+}
+
+.loginfield02 {
+  margin-left: -40px;
 }

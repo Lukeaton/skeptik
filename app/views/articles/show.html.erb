@@ -1,33 +1,30 @@
-
-
-
-  <div class="article-main">
+<div class="article-main">
+  <h1><%= @article.title %></h1>
+  <div id="hero-image">
     <%= link_to image_tag(@article.image), @article %>
-    <h2><%= @article.title %></h2>
-    <p><%= simple_format @article.story %></p>
-      <% if @current_user.id == @article.user_id %>
-        <%= link_to 'Edit', edit_article_path(@article) %>
-        <%= link_to 'Delete', article_path(@article),
-            method: :delete,
-            data: { confirm: 'Are you sure?' } %></td>
+  </div>
+  <%= simple_format @article.story %>
+  <% if @current_user.id == @article.user_id %>
+  <div id="edit-delete">
+    <%= link_to 'Edit', edit_article_path(@article) %>
+    <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>
+</div>
 
-        <% end %>
+<div class="like-clicker">
+<div id="dislike">
+  <% if @collections.present?%>
+    <% if @current_user.collections.first.articles.include? @article %>
+      <%= link_to "Dislike", unlike_article_path(@article)%>
+    <% end %>
   </div>
 
+  <div id="like">
+  <% else %>
+    <%= link_to "Like", like_article_path(@article) %>
+  <% end %>
 
-  <div class="like-clicker">
-    <div id="dislike">
-      <% if @collections.present?%>
-          <% if @current_user.collections.first.articles.include? @article %>
-            <%= link_to "Unlike",  unlike_article_path(@article)%>
-        <% end %>
-    </div>
-    
-    <div id="like">
-      <% else %>
-      <%= link_to "Like", like_article_path(@article) %>
-      <% end %>
-    </div>
+</div>
 
-
-  </div>
+</div>
